@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="Blueprints.Core.Library" basedir=".">
+    <description>Builds the blueprint core library</description>
+    
+    <!-- DO NOT REMOVE! we need this to be able to access env.BUILD_NUMBER-->
+    <property environment="env"/>
+    <!-- DO NOT REMOVE! -->
+    
+    <target name="makeZip"> 
+        <zip destfile="/home/outlet/control.space/dist/js-bridge.zip" update="false">
+            <zipfileset dir="."/>
+        </zip>
+        <copy todir="/home/outlet/control.space/dist">
+            <fileset dir=".">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+    </target>
+</project>
+
