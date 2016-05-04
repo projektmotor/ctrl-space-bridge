@@ -4,4 +4,4 @@ The CTRL+SPACE JavaScript Bridge is a set of JavaScript files. In those files an
 
 ## Installation
 
-For detailed installation instructions, see [CTRL+SPACE Documentation](https://control-space.projektmotor.de/dokumentation/en/user/installation "CTRL+SPACE Installation")
+For detailed installation instructions, see [CTRL+SPACE Documentation](http://ctrl-space-ide.com/dokumentation/en/user/installation "CTRL+SPACE Installation")
