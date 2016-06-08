@@ -23,6 +23,7 @@ cs.extend.addAutocompletion = function (configuration) {
     /* @todo: use merge here */
     config = configuration;
 
+
     codeCompletion = new Packages.api.Collector({
         collect: function(resultSet, query){
 
@@ -33,24 +34,27 @@ cs.extend.addAutocompletion = function (configuration) {
 
             //completion with modifier
             modifier = new Packages.api.Modifier({
-               modify: config.onSubmit
+               modify: function() {
+                   return config.onSubmit();
+               }
             });
-
+ 
             selectAction = new Packages.api.SelectionAction({
                 init: config.onSelect,
                 remove: config.onBlur
             });
-            
-            if(new java.lang.String(config.name).startsWith(query)){
+//            console.out("haystack: "+config.name+", needle:"+query);
+            var replaced = new String(config.name.toLowerCase()).replace(/\&lt\;/g, '<').replace(/\&gt\;/g, '>');
+            if(new Packages.java.lang.String(replaced).startsWith(new String(query).toLowerCase())){
                 item = builder.createItem(config.name);
                 item.addSelectionAction(selectAction);
                 item.setModifier(modifier);
-
+                
                 resultSet.addItem(item);
             }
             
         }
     });
-
+   
     builder = completions.add(config.scope, codeCompletion);
 };

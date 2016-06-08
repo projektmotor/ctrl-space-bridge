@@ -1070,6 +1070,16 @@ cs.obj.SlimLayer.prototype.getStyleRanges = function () {
     return this.raw.getStyleRanges();
 };
 
+
+/**
+ * Get styles for text layer. differs from getStyleRanges in that it contains ready to use css property names and values
+ * 
+ * @returns {array}
+ */
+cs.obj.SlimLayer.prototype.getStyles = function () {
+    return this.raw.getStyles();
+};
+
 /**
  * Get top value in vertical direction.
  *
