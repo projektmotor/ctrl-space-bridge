@@ -41,7 +41,7 @@ cs.extend.addAutocompletion = function (configuration) {
                 remove: config.onBlur
             });
             
-            if(config.name.startsWith(query)){
+            if(new java.lang.String(config.name).startsWith(query)){
                 item = builder.createItem(config.name);
                 item.addSelectionAction(selectAction);
                 item.setModifier(modifier);

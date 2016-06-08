@@ -3,10 +3,10 @@
  *
  * @param {object} obj1
  * @param {object} obj2
- * @returns {object}
+ * @returns {object} 
  */
 function merge(obj1, obj2) {
-
+ 
   for (var p in obj2) {
     try {
       // Property in destination object set; update its value.
